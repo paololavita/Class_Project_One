@@ -47,22 +47,6 @@
 });
 });
 
-function undisableTxt() {
-    document.getElementById('sname').disabled = false;
-    document.getElementById('address').disabled = false;
-    document.getElementById('mdate').disabled = false;
-    document.getElementById('atime').disabled = false;
-    document.getElementById('selatime').disabled = false;
-    document.getElementById('radio').disabled = false;
-    document.getElementById('reason').disabled = false;
-  }
-
-  $('#test-button').on('click', function(event)
-  {
-    event.preventDefault();
-    undisableTxt();
-  });
-
     $('#add-button').on('click', function(event)
     {
         event.preventDefault();

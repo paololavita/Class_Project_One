@@ -26,6 +26,17 @@
   <!-- Facebook SDK for javascript BEGIN HERE-->
     <script>
 
+
+    function undisableTxt() {
+        document.getElementById('sname').disabled = false;
+        document.getElementById('address').disabled = false;
+        document.getElementById('mdate').disabled = false;
+        document.getElementById('atime').disabled = false;
+        document.getElementById('selatime').disabled = false;
+        document.getElementById('radio').disabled = false;
+        document.getElementById('reason').disabled = false;
+    }
+
         // This is called with the results from from FB.getLoginStatus().
         function statusChangeCallback(response) {
         console.log('statusChangeCallback');
