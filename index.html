@@ -21,28 +21,112 @@
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   <script src='app.js'></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places"></script>
+    
+  <!-- Facebook SDK for javascript BEGIN HERE-->
+    <script>
+
+        // This is called with the results from from FB.getLoginStatus().
+        function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+              testAPI();
+            } else {
+          // The person is not logged into your app or we are unable to tell.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into this app.';
+        }
+      }
+    
+      // This function is called when someone finishes with the Login
+      // Button.  See the onlogin handler attached to it in the sample
+      // code below.
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+      }
+    
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '608375969538539',
+          cookie     : true,  // enable cookies to allow the server to access 
+                              // the session
+          xfbml      : true,  // parse social plugins on this page
+          version    : 'v2.8' // use graph api version 2.8
+        });
+    
+        // Now that we've initialized the JavaScript SDK, we call 
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+    
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+    
+      };
+    
+      // Load the SDK asynchronously
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    
+      // Here we run a very simple test of the Graph API after login is
+      // successful.  See statusChangeCallback() for when this call is made.
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('status').innerHTML =
+            'Thanks for logging in, ' + response.name + '!';
+        });
+      }
+    
+      </script> <!-- Facebook javascript ENDS HERE -->
+
 </head>
 
 <body>
     
-    <div>
-        <img src="./assets/images/engph.jpg">
-    </div>
-        <nav class="clearfix">
-          <div class="logo">
-              <img src="./assets/images/Logo.svg" alt="Logo" style="width: 240px; height: 60.046px;">
-          </div>
-          <div class="menu">
-            <ul>
-              <li><a href="index.html">About</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <div class="bgimg-1">
+  
+        <div class="logo">
+            <img src="./assets/images/Logo.svg" alt="Logo" style="width: 240px; height: 60.046px;">
         </div>
-    </nav>
-<div class='row data-valid'>
+        
+    </div>
+
+    <div class='row data-valid'>
     <p>Please Fill up the Blank</p>
 </div>
+ 		
+	<!-- Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked. -->	
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+		</fb:login-button>
+	
+	<div id="status">Here goes the Status</div>
+
+    
 <div class="row student-info">
     <div class="col-lg-12">                      
                               <!--Display student Info-->
@@ -60,12 +144,42 @@
                         <td>AM/PM</td>
                         <td>Value</td>
                         <td>Reason</td>
+                        <td>Map</td>
                     </tr>
                 </th>
             </table>             
         </div>   
     </div>
 </div>
+
+<a href="#myMapModal" class="btn" data-toggle="modal">Launch Map Modal</a>
+
+<div class="modal fade" id="myMapModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                 <h4 class="modal-title">Modal title</h4>
+
+            </div>
+            <div class="modal-body"><div class="container"></div>
+                <div class="container">
+                    <div class="row">
+                      <input id="pac-input" class="search-controls" type="text" placeholder="Search Box">
+                        <div id="map-canvas" class=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
                             
                             <!-- Add Student  -->
             <div class="row card-secondary">

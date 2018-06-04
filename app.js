@@ -34,12 +34,13 @@
     var td0 =$('<td>').text(msname);
     var td1 =$('<td>').text(address);
     var td2 =$('<td>').text(mdate);
-    var td3 =$('<td>').text(atime);
+    var td3=$('<td>').text(atime);
     var td4 =$('<td>').text(selatime);
     var td5 =$('<td>').text(rvalue);
     var td6 =$('<td>').text(reason);
+    var td7 =$('<td>').text('MAP');
 
-    tr.append(td0,td1,td2,td3,td4,td5,td6);
+    tr.append(td0,td1,td2,td3,td4,td5,td6,td7);
     mtable.append(tr);
 });
 });

@@ -2,7 +2,32 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.clearfix:after {
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+  }
+  
+  .bgimg-1 {
+    position: relative;
+    background-image: url("./assets/images/engph.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+  }
+  
+  .logo {
+    position: absolute;
+    left: 10%;
+    top: 90%;
+    width: 100%;
+  }
+  
+  
+
+.clearfix2:after {
     content: "";
     display: table;
     clear: both;
@@ -11,7 +36,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .backgrnd {
     width: 100%;
 }
-img {
+img2 {
     position: relative;
     border: 0;
     margin-top: 0px;
