@@ -37,6 +37,7 @@
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
               testAPI();
+              undisableTxt();
             } else {
           // The person is not logged into your app or we are unable to tell.
           document.getElementById('status').innerHTML = 'Please log ' +
@@ -113,10 +114,6 @@
         </div>
         
     </div>
-
-    <div class='row data-valid'>
-    <p>Please Fill up the Blank</p>
-</div>
  		
 	<!-- Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
@@ -124,7 +121,7 @@
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 		</fb:login-button>
 	
-	<div id="status">Here goes the Status</div>
+	<div id="status"></div>
 
     
 <div class="row student-info">
@@ -181,6 +178,8 @@
     </div>
     <!-- /.modal -->
                             
+    <button class="btn btn-primary" id="test-button" type="submit">Test Toggle</button>
+
                             <!-- Add Student  -->
             <div class="row card-secondary">
                 <div class='col-lg-6'>
@@ -191,37 +190,37 @@
                     <form>
                         <div class="form-group">
                             <label for="student-name">Student Name</label>
-                            <input class="form-control" id="sname" type="text" required>
+                            <input class="form-control" type="text" id="sname" required disabled>
                         </div>
                         <div class="form-group">
-                                <label for="location">address</label>
-                                <input class="form-control" type="text" id="address" required>
+                                <label for="location">Address</label>
+                                <input class="form-control" type="text" id="address" required disabled>
                         </div>
                         <div class="form-group">
                                 <label for="Date">Date</label>
-                                <input class="form-control arrival-date" type="date" id="mdate" required>
+                                <input class="form-control arrival-date" type="date" id="mdate" required disabled>
                         </div>
                         <div class="form-group">
                             <label for="atime">What Time did you arrived(Time(hh:mm))?</label>
-                            <input class="form-control arrival-time" id="atime" type="time" required><br>
-                            <select name="selatime" id="selatime" style="width:'100px'">
+                            <input class="form-control arrival-time" id="atime" type="time" required disabled><br>
+                            <select name="selatime" id="selatime" style="width:'100px'" disabled>
                                 <option value='AM'>AM</option>
                                 <option value='PM'>PM</option>                          
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="radio"  name="r" value="I am on Time"/> I am on Time
+                            <input type="radio"  id="radio" name="r" value="I am on Time" disabled/> I am on Time
                             <br>
-                            <input type="radio"  name="r" value="I am late"/> I am late
+                            <input type="radio"  id="radio" name="r" value="I am late" disabled/> I am late
                             <br>
-                            <input type="radio"  name="r" value="I will not be at Coop Today(fill in reason below)"/> I will not be at Coop Today(fill in reason below)
+                            <input type="radio"  id="radio" name="r" value="I will not be at Coop Today(fill in reason below)" disabled/> I will not be at Coop Today(fill in reason below)
                             <br>
-                            <input type="radio"  name="r" value="I am leaving early( fill in Time and reason below)"/> I am leaving early( fill in Time and reason below)
+                            <input type="radio"  id="radio" name="r" value="I am leaving early( fill in Time and reason below)" disabled/> I am leaving early( fill in Time and reason below)
                         </div>
                        
                         <div class="form-group">
                             <label for="Date">Reason For Absence</label>
-                            <textarea class="form-control" type="text" id="reason"></textarea>
+                            <textarea class="form-control" type="text" id="reason" disabled></textarea>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary" id="add-button" type="submit">Submit</button>

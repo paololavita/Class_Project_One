@@ -13,6 +13,8 @@
 
   var database = firebase.database();
 
+
+
   $(document).ready(function()
   {
     var mtable = $('.table-info');
@@ -34,7 +36,7 @@
     var td0 =$('<td>').text(msname);
     var td1 =$('<td>').text(address);
     var td2 =$('<td>').text(mdate);
-    var td3=$('<td>').text(atime);
+    var td3 =$('<td>').text(atime);
     var td4 =$('<td>').text(selatime);
     var td5 =$('<td>').text(rvalue);
     var td6 =$('<td>').text(reason);
@@ -44,6 +46,22 @@
     mtable.append(tr);
 });
 });
+
+function undisableTxt() {
+    document.getElementById('sname').disabled = false;
+    document.getElementById('address').disabled = false;
+    document.getElementById('mdate').disabled = false;
+    document.getElementById('atime').disabled = false;
+    document.getElementById('selatime').disabled = false;
+    document.getElementById('radio').disabled = false;
+    document.getElementById('reason').disabled = false;
+  }
+
+  $('#test-button').on('click', function(event)
+  {
+    event.preventDefault();
+    undisableTxt();
+  });
 
     $('#add-button').on('click', function(event)
     {
