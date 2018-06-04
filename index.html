@@ -33,6 +33,9 @@
         document.getElementById('atime').disabled = false;
         document.getElementById('selatime').disabled = false;
         document.getElementById('radio').disabled = false;
+        document.getElementById('radio2').disabled = false;
+        document.getElementById('radio3').disabled = false;
+        document.getElementById('radio4').disabled = false;
         document.getElementById('reason').disabled = false;
     }
 
@@ -159,36 +162,6 @@
     </div>
 </div>
 
-<a href="#myMapModal" class="btn" data-toggle="modal">Launch Map Modal</a>
-
-<div class="modal fade" id="myMapModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                 <h4 class="modal-title">Modal title</h4>
-
-            </div>
-            <div class="modal-body"><div class="container"></div>
-                <div class="container">
-                    <div class="row">
-                      <input id="pac-input" class="search-controls" type="text" placeholder="Search Box">
-                        <div id="map-canvas" class=""></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-                            
-
                             <!-- Add Student  -->
             <div class="row card-secondary">
                 <div class='col-lg-6'>
@@ -220,11 +193,11 @@
                         <div class="form-group">
                             <input type="radio"  id="radio" name="r" value="I am on Time" disabled/> I am on Time
                             <br>
-                            <input type="radio"  id="radio" name="r" value="I am late" disabled/> I am late
+                            <input type="radio"  id="radio2" name="r" value="I am late" disabled/> I am late
                             <br>
-                            <input type="radio"  id="radio" name="r" value="I will not be at Coop Today(fill in reason below)" disabled/> I will not be at Coop Today(fill in reason below)
+                            <input type="radio"  id="radio3" name="r" value="I will not be at Coop Today(fill in reason below)" disabled/> I will not be at Coop Today(fill in reason below)
                             <br>
-                            <input type="radio"  id="radio" name="r" value="I am leaving early( fill in Time and reason below)" disabled/> I am leaving early( fill in Time and reason below)
+                            <input type="radio"  id="radio4" name="r" value="I am leaving early( fill in Time and reason below)" disabled/> I am leaving early( fill in Time and reason below)
                         </div>
                        
                         <div class="form-group">
