@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Co-Op Attendence</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Bootstrap reference -->  
+  <link rel="stylesheet" type="text/css" href="./style.css"> <!-- reference to css tyle-->  
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script> <!-- Firebase Reference -->        
+</head>
+
+<body>
+        	
+    
+    
+    <div class="container">
+        <div class="jumbotron">
+            
+            <div class="logo">
+                <img class="lgo" src="./assets/images/Logo.svg" alt="Logo" style="width: 240px; height: 60.046px;">
+            </div>
+            
+            <div class="fb">
+                
+                Below we include the Login Button social plugin. This button uses the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked. 
+                
+                <fb:login-button 
+                scope="public_profile,email"
+                onlogin="checkLoginState();">
+                </fb:login-button>
+            </div>
+            
+        </div>
+        
+        <div id="status"></div>
+        
+        
+        <div class="row student-info">
+            <div class="col-lg-12">                      
+                <!--Display student Info-->
+                <div class="card-heading">
+                    <h3 class="card-title"><strong>Student Information</strong></h3>
+                </div>
+                <div class="row panel-body-info">
+                    <table class="table-info">
+                        <tr class="trrow">
+                                <th>Student Name</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                                <th>Arrival Time</th>
+                                <th>AM/PM</th>
+                                <th>Timing</th>
+                                <th>Reason</th>
+                                <th>Map</th>
+                            </tr>
+                    </table>             
+                </div>   
+            </div>
+        </div>
+
+        <!-- Add Student  -->
+            
+        
+        <form>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-lg-12'>
+                            <div class="card-heading">
+                                <h3 class="card-title"><strong>Attendance</strong></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                                                
+                            <label for="student-name">Student Name</label>
+                                <input class="form-control" type="text" id="sname" required disabled>
+                        </div>
+                                            
+                        <div class="col-md-6">
+                                
+                            <label for="location">Address</label>
+                                <input class="form-control" type="text" id="address" required disabled>
+                        </div>
+                        <div class="col-md-6">
+
+                                    <label for="Date">Date</label>
+                                    <input class="form-control arrival-date" type="date" id="mdate" required disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="atime">What Time did you arrived(Time(hh:mm))?</label>
+                                    <input class="form-control arrival-time" id="atime" type="time" required disabled>
+                                    <br>
+                                    <select name="selatime" id="selatime" style="width:'100px'" disabled>
+                                        <option value='AM'>AM</option>
+                                        <option value='PM'>PM</option>                          
+                                    </select>
+                                
+                                </div>
+                                
+                                    <div class="col-sm-4">
+                                        <input type="radio"  id="radio" name="r" value="I am on Time" disabled/> I am on Time
+                                        <br>
+                                        <input type="radio"  id="radio2" name="r" value="I am late" disabled/> I am late
+                                        <br>
+                                        <input type="radio"  id="radio3" name="r" value="I will not be at Coop Today(fill in reason below)" disabled/> I will not be at Coop Today(fill in reason below)
+                                        <br>
+                                        <input type="radio"  id="radio4" name="r" value="I am leaving early( fill in Time and reason below)" disabled/> I am leaving early( fill in Time and reason below)
+                                    </div>
+                                
+                                    <div class="col-md-8">
+                                        <label for="reason">Reason For Absence</label>
+                                        <textarea class="form-control" type="text" id="reason" disabled></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" id="add-button" type="submit">Submit</button>
+                                    </div>
+                                
+                    </div>
+                    
+                </div>
+                            
+        </div>
+        </form>             
+    </div>                      
+</div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jquery reference -->
+    <script src="./app.js"></script>
+</body>
+    </html>
