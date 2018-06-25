@@ -37,7 +37,7 @@ function undisableTxt() {
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '608375969538539',
+      appId      : '608895872814390',
       cookie     : true,  // enable cookies to allow the server to access 
                           // the session
       xfbml      : true,  // parse social plugins on this page
