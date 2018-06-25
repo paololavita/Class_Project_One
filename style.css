@@ -22,7 +22,7 @@ body, html {
     margin-top: 25px;
 }
   .container {
-      padding-top: 15px;
+      padding: 16px 20px 15px 20px;
       background-color: white;
       border-radius: 15px;
       width: 80%;
@@ -31,9 +31,9 @@ body, html {
   }
   .jumbotron {
     width: 80%;
-    margin: 25px auto;
     padding: 0;
     border-radius: 15px;
+    margin: 0 auto;
   }
   .bgimg-1 {
     position: relative;
@@ -44,6 +44,7 @@ body, html {
     height: 100%;
   }
   p {
+      position: relative;
       font-size: 10pt;
       color: white;
       width: 450px;
@@ -56,12 +57,10 @@ body, html {
     }
   .logo {
     position: absolute;
-    left: 10%;
-    top: 90%;
+    left: 15%;
+    top: 15%;
     width: 100%;
-    margin-top: -587px;
     font-size: 28px;
-    padding: 93px 0px 0px 47px; 
 }
 .clearfix2:after {
     content: "";
