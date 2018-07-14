@@ -12,19 +12,30 @@
 </head>
 
 <body>
-    <div class="bgimg-1">
-        <div class="logo">
-            <img src="./assets/images/Logo.svg" alt="Logo" style="width: 240px; height: 60.046px;">
-        </div>
+    <div class="jumbotron">
+
+            <div>
+                
+                <img src="./assets/images/engph.jpg" alt="student">
+                <div class="logo">
+                    <img src="./assets/images/Logo.svg" alt="Logo" style="width: 240px; height: 60.046px;">
+                    <div>
+                        <p>
+                            
+                            Below we include the Login Button social plugin. This button uses the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked.	
+                            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                            </fb:login-button>
+                            <div id="status"></div>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
     </div>
  		
-    <!-- Below we include the Login Button social plugin. This button uses the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked. -->	
-	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-		</fb:login-button>
-	    <div id="status"></div>
 
     
-<div class="row student-info">
+<div class="container">
     <div class="col-lg-12">                      
                               <!--Display student Info-->
         <div class="card-heading">
@@ -50,53 +61,71 @@
 </div>
 
                             <!-- Add Student  -->
-            <div class="row card-secondary">
-                <div class='col-lg-6'>
+    <div class="container">
+            <div class='col-lg-6'>
                     <div class="card-heading">
                         <h3 class="card-title"><strong>Attendance</strong></h3>
                     </div>                           
-                                <!-- Entry Form -->
-                    <form>
-                        <div class="form-group">
-                            <label for="student-name">Student Name</label>
-                            <input class="form-control" type="text" id="sname" required disabled>
-                        </div>
-                        <div class="form-group">
-                                <label for="location">Address</label>
-                                <input class="form-control" type="text" id="address" required disabled>
-                        </div>
-                        <div class="form-group">
-                                <label for="Date">Date</label>
-                                <input class="form-control arrival-date" type="date" id="mdate" required disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="atime">What Time did you arrived(Time(hh:mm))?</label>
-                            <input class="form-control arrival-time" id="atime" type="time" required disabled><br>
-                            <select name="selatime" id="selatime" style="width:'100px'" disabled>
-                                <option value='AM'>AM</option>
-                                <option value='PM'>PM</option>                          
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="radio"  id="radio" name="r" value="I am on Time" disabled/> I am on Time
-                            <br>
-                            <input type="radio"  id="radio2" name="r" value="I am late" disabled/> I am late
-                            <br>
-                            <input type="radio"  id="radio3" name="r" value="I will not be at Coop Today(fill in reason below)" disabled/> I will not be at Coop Today(fill in reason below)
-                            <br>
-                            <input type="radio"  id="radio4" name="r" value="I am leaving early( fill in Time and reason below)" disabled/> I am leaving early( fill in Time and reason below)
-                        </div>
-                       
-                        <div class="form-group">
-                            <label for="Date">Reason For Absence</label>
-                            <textarea class="form-control" type="text" id="reason" disabled></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" id="add-button" type="submit">Submit</button>
-                        </div>
-                    </form>             
-                </div>                      
-            </div>            
+                    <!-- Entry Form -->
+        <form>
+            <div class="row">
+                    <div class='col-lg-6'>
+                        <label for="student-name">Student Name</label>
+                        <input class="form-control" type="text" id="sname" required disabled>
+                    </div>
+            
+                    <div class='col-lg-6'>
+                        <label for="location">Address</label>
+                        <input class="form-control" type="text" id="address" required disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class='col-lg-6'>
+                        <label for="Date">Date</label>
+                        <input class="form-control arrival-date" type="date" id="mdate" required disabled>
+                    </div>
+                    
+                    <div class='col-lg-6'>
+                        <label for="atime">What Time did you arrived(Time(hh:mm))?</label>
+                        <input class="form-control arrival-time" id="atime" type="time" required disabled><br>
+                        <select name="selatime" id="selatime" style="width:'100px'" disabled>
+                            <option value='AM'>AM</option>
+                            <option value='PM'>PM</option>                          
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-5">
+                    <input type="radio"  id="radio" name="r" value="I am on Time" disabled/> I am on Time
+                    <br>
+                    <input type="radio"  id="radio2" name="r" value="I am late" disabled/> I am late
+                    <br>
+                    <input type="radio"  id="radio3" name="r" value="I will not be at Coop Today(fill in reason below)" disabled/> I will not be at Coop Today(fill in reason below)
+                    <br>
+                    <input type="radio"  id="radio4" name="r" value="I am leaving early( fill in Time and reason below)" disabled/> I am leaving early( fill in Time and reason below)
+                </div>
+
+                 <div class="col-lg-7">
+                    <label for="Date">Reason For Absence</label>
+                    <textarea class="form-control" type="text" id="reason" disabled></textarea>
+                </div>
+                
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" id="add-button" type="submit">Submit</button>
+                    </div>
+                
+                </div>
+            </div>
+        </form>             
+    </div>                      
+</div>
+</div>            
       </div>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jquery reference -->

@@ -8,7 +8,33 @@ body, html {
     font: 400 15px/1.8 "Lato", sans-serif;
     color: #777;
   }
-  
+  img {
+      width: 100%;
+      border-radius: 15px;
+  }
+  .col-lg-6 {
+      flex-basis: 50%;
+      max-width: 100%;
+  }
+ label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    margin-top: 25px;
+}
+  .container {
+      padding: 16px 20px 15px 20px;
+      background-color: white;
+      border-radius: 15px;
+      width: 80%;
+      margin-top: 25px;
+      margin-bottom: 35px;
+  }
+  .jumbotron {
+    width: 80%;
+    padding: 0;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
   .bgimg-1 {
     position: relative;
     background-image: url("./assets/images/engph.jpg");
@@ -17,16 +43,25 @@ body, html {
     background-size: contain;
     height: 100%;
   }
-  
+  p {
+      position: relative;
+      font-size: 10pt;
+      color: white;
+      width: 450px;
+  }
+  .btn-primary {
+        color: #fff;
+        margin: 23px;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
   .logo {
     position: absolute;
-    left: 10%;
-    top: 90%;
+    left: 15%;
+    top: 15%;
     width: 100%;
-  }
-  
-  
-
+    font-size: 28px;
+}
 .clearfix2:after {
     content: "";
     display: table;
@@ -73,7 +108,7 @@ h1 {
 
 body {
     margin:10px;
-    background-color: white;
+    background-color: lightgray;
 }
 .contain {
     width: 65%;
@@ -86,11 +121,6 @@ nav ul li {
     list-style: none;
     list-style-type: none;
     margin: 25px 15px;
-}
-.logo {
-    margin-top: -220px;
-    font-size: 28px;
-    padding: 30px 0px 0px 25px;
 }
 nav .menu  {
     margin-right: 25px;
